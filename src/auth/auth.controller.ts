@@ -5,6 +5,7 @@ import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import { AuthService } from './auth.service';
 import { RegisterDto } from './dto';
 import { RegisterFailedSchema, RegisterSuccessSchema } from './schemas';
+import { IResponse } from '../types';
 
 @ApiTags('Auth')
 @Controller('v1/auth')
@@ -20,8 +21,8 @@ export class AuthController {
     status: HttpStatus.BAD_REQUEST,
     type: RegisterFailedSchema,
   })
-  public register(@Body() dto: RegisterDto) {
-    const result = this.authService.register(dto);
+  public register(@Body() dto: RegisterDto): IResponse<unknown> {
+    const result: IResponse<unknown> = this.authService.register(dto);
     return result;
   }
 }

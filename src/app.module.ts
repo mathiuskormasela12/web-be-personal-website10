@@ -7,7 +7,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 
 // Import API Modules
-import AuthModule from './auth/auth.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [

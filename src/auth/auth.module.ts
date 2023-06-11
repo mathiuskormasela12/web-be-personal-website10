@@ -26,4 +26,4 @@ import { ValidationPipe } from '../pipes/validation.pipe';
     AuthService,
   ],
 })
-export default class AuthModule {}
+export class AuthModule {}
